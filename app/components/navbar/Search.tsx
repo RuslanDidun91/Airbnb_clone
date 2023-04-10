@@ -1,6 +1,5 @@
 //definedd as a client component
 'use client';
-
 import { BiSearch } from 'react-icons/bi';
 
 const Search = () => {
