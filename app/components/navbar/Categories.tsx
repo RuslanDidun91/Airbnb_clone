@@ -98,17 +98,28 @@ export const categories = [
 
 const Categories = () => {
 
+  const params = useSearchParams();
+  //extracting category
+  const category = params?.get('category');
+  //to display categories only on categories page
+  const pathname = usePathname();
+  const isMainPage = pathname === '/';
+
+  if (!isMainPage) {
+    return null;
+  }
 
 
   return (
     <Container>
       <div
         className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
-        {categories.map((category) => (
+        {categories.map((item) => (
           <CategoryBox
-            key={category.label}
-            label={category.label}
-            icon={category.icon}
+            key={item.label}
+            label={item.label}
+            icon={item.icon}
+            selected={category === item.label}
           />
         ))}
       </div>
