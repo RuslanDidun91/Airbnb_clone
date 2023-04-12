@@ -16,6 +16,7 @@ import Button from '../Button';
 import { useRouter } from 'next/navigation';
 
 
+
 const LoginModal = () => {
 
   const router = useRouter();
@@ -90,13 +91,13 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => { }}
+        onClick={() => signIn('google')}
       />
       <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => { }}
+        onClick={() => signIn('github')}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <p>Do not have an account?
