@@ -11,6 +11,7 @@ import { categories } from '../navbar/Categories';
 import CountrySelect from '../inputs/CountrySelect';
 import Counter from '../inputs/Counter';
 import ImageUpload from '../inputs/ImageUpload';
+import Input from '../inputs/Input';
 
 
 enum STEPS {
@@ -29,6 +30,7 @@ const RentModal = () => {
 
   //select category state
   const [step, setStep] = useState(STEPS.CATEGORY);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { register, handleSubmit, setValue, watch, reset, formState: { errors }
   } = useForm<FieldValues>({
@@ -179,8 +181,58 @@ const RentModal = () => {
           onChange={(value) => setCustomValue('imageSrc', value)}
         />
       </div>
-    )
-  }
+    );
+  };
+
+  if (step === STEPS.DESCRIPTION) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='How would you describe your place?'
+          subtitle='Short and sweet works best'
+        />
+        <Input
+          id='title'
+          label='Title'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <hr />
+        <Input
+          id='description'
+          label='Description'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+      </div>
+    );
+  };
+
+  if (step === STEPS.PRICE) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='How, set your price'
+          subtitle='How much it is going to be?'
+        />
+        <Input
+          id='price'
+          label='Price'
+          type='number'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          formatPrice
+          required
+        />
+      </div>
+    );
+  };
+
 
   return (
     <div>
