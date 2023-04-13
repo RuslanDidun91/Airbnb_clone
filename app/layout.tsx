@@ -4,6 +4,7 @@ import ClientOnly from './components/ClientOnly';
 import RegisterModal from './components/modals/RegisterModal';
 import ToasterProvider from './providers/ToasterProvider';
 import LoginModal from './components/modals/LoginModal';
+import RentModal from './components/modals/RentModal';
 import getCurrentUser from './actions/getCurrentUser';
 
 import './globals.css';
@@ -32,6 +33,7 @@ const currentUser = await getCurrentUser();
         <ClientOnly>
           <ToasterProvider />
           <RegisterModal/>
+          <RentModal/>
           <LoginModal/>
           <Navbar currentUser={currentUser}/>
         </ClientOnly>
