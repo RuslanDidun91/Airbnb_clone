@@ -2,14 +2,16 @@ import Container from "@/app/components/Container";
 import ClientOnly from "./components/ClientOnly";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import EmptyState from "./components/EmptyState";
+import getListings from './actions/getListings';
+import ListingCard from "./components/listing/ListingCard";
 
 
 const Home = async ({ }) => {
 
+  const listings = await getListings();
   const currentUser = await getCurrentUser();
-  const isEmpty = true;
 
-  if (isEmpty) {
+  if (listings.length === 0) {
     return (
       <ClientOnly>
         <EmptyState showReset/>
