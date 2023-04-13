@@ -4,10 +4,13 @@ import { useRouter } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import Modal from "./Modal";
 import Heading from '../Heading';
+import dynamic from 'next/dynamic'
 import CategoryInput from '../inputs/CategoryInput';
 import useRentModal from "@/app/hooks/useRentModal";
 import { categories } from '../navbar/Categories';
 import CountrySelect from '../inputs/CountrySelect';
+import Map from '../Map';
+
 
 
 enum STEPS {
@@ -45,6 +48,11 @@ const RentModal = () => {
   //destructed from useForm
   const category = watch('category');
   const location = watch('location');
+
+  //import in that way due to leaflet not supporting by react
+  const Map = useMemo(() => dynamic(() => import('../Map'), {
+    ssr: false
+  }), [location]);
 
   //due to setValue doesn't rerender the page in nextJs
   const setCustomValue = (id: string, value: any) => {
@@ -116,7 +124,7 @@ const RentModal = () => {
           onChange={(value) => setCustomValue('location', value)}
         />
         <Map 
-        
+          center={location?.latlng}
         />
       </div>
     );
