@@ -17,6 +17,7 @@ import { useRouter } from 'next/navigation';
 
 
 
+
 const LoginModal = () => {
 
   const router = useRouter();
@@ -54,8 +55,14 @@ const LoginModal = () => {
       if (callback?.error) {
         toast.error(callback.error)
       }
-    })
-  }
+    });
+  };
+
+  //toggle from login to register
+  const toggle = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
 
   const bodyContent = (
     <div className='flex flex-col gap-4'>
@@ -100,11 +107,11 @@ const LoginModal = () => {
         onClick={() => signIn('github')}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
-        <p>Do not have an account?
+        <p>First time using Airbnb?
           <span
-            onClick={registerModal.onClose}
+            onClick={toggle}
             className="text-neutral-800 cursor-pointer hover:underline font-bold ml-2">
-            Sign up
+            Create an account
           </span>
         </p>
       </div>
