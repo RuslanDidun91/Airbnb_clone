@@ -9,8 +9,7 @@ import CategoryInput from '../inputs/CategoryInput';
 import useRentModal from "@/app/hooks/useRentModal";
 import { categories } from '../navbar/Categories';
 import CountrySelect from '../inputs/CountrySelect';
-import Map from '../Map';
-
+import Counter from '../inputs/Counter';
 
 
 enum STEPS {
@@ -48,6 +47,9 @@ const RentModal = () => {
   //destructed from useForm
   const category = watch('category');
   const location = watch('location');
+  const guestCount = watch('guestCount');
+  const roomCount = watch('roomCount');
+  const bathroomCount = watch('bathroomCount');
 
   //import in that way due to leaflet not supporting by react
   const Map = useMemo(() => dynamic(() => import('../Map'), {
@@ -123,9 +125,41 @@ const RentModal = () => {
           value={location}
           onChange={(value) => setCustomValue('location', value)}
         />
-        <Map 
+        <Map
           center={location?.latlng}
         />
+      </div>
+    );
+  };
+
+  if (step === STEPS.INFO) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Share information about your place'
+          subtitle='What amenities do you have?'
+        />
+        <Counter
+          title='Guests'
+          subtitle='How many people do you allow?'
+          value={guestCount}
+          onChange={(value) => setCustomValue('guestCount', value)}
+        />
+        <hr/>
+        <Counter
+          title='Rooms'
+          subtitle='How many rooms do you have?'
+          value={roomCount}
+          onChange={(value) => setCustomValue('guestCount', value)}
+        />
+        <hr/>
+        <Counter
+          title='Bathrooms'
+          subtitle='How many Bathrooms do you have?'
+          value={bathroomCount}
+          onChange={(value) => setCustomValue('guestCount', value)}
+        />
+      
       </div>
     );
   };
