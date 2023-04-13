@@ -12,6 +12,8 @@ import CountrySelect from '../inputs/CountrySelect';
 import Counter from '../inputs/Counter';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 
 enum STEPS {
@@ -77,6 +79,26 @@ const RentModal = () => {
   const onNext = () => {
     setStep((value) => value + 1);
   }
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    if (step !== STEPS.PRICE) {
+      return onNext();
+    }
+    setIsLoading(true);
+
+    axios.post('/api/listing', data).then(() => {
+      toast.success('Listing created');
+      router.refresh();
+      //reseting entire form
+      reset();
+      setStep(STEPS.CATEGORY);
+      rentModal.onClose();
+    }).catch(() => {
+      toast.error('Something went wrong.')
+    }).finally(() => {
+      setIsLoading(false);
+    });
+  };
 
   //in case if last category
   const actionLabel = useMemo(() => {
@@ -168,7 +190,6 @@ const RentModal = () => {
   };
 
   //image section 
-
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
@@ -184,6 +205,7 @@ const RentModal = () => {
     );
   };
 
+  //description section
   if (step === STEPS.DESCRIPTION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
@@ -212,6 +234,7 @@ const RentModal = () => {
     );
   };
 
+  //price section
   if (step === STEPS.PRICE) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
@@ -233,14 +256,13 @@ const RentModal = () => {
     );
   };
 
-
   return (
     <div>
       <Modal
         title="Airbnb your home!"
         isOpen={rentModal.isOpen}
         onClose={rentModal.onClose}
-        onSubmit={onNext}
+        onSubmit={handleSubmit(onSubmit)}
         actionLabel={actionLabel}
         secondaryActionLabel={secondaryActionLabel}
         body={bodyContent}
@@ -249,6 +271,5 @@ const RentModal = () => {
     </div>
   );
 };
-
 
 export default RentModal;
