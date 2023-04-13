@@ -44,6 +44,7 @@ const RentModal = () => {
 
   //destructed from useForm
   const category = watch('category');
+  const location = watch('location');
 
   //due to setValue doesn't rerender the page in nextJs
   const setCustomValue = (id: string, value: any) => {
@@ -109,9 +110,14 @@ const RentModal = () => {
           title='Where is it located?'
           subtitle='Help others to find you'
         />
-        <CountrySelect 
+        {/* country dropdown */}
+        <CountrySelect
+          value={location}
+          onChange={(value) => setCustomValue('location', value)}
+        />
+        <Map 
         
-        /> 
+        />
       </div>
     );
   };
