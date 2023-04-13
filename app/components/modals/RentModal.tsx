@@ -10,6 +10,7 @@ import useRentModal from "@/app/hooks/useRentModal";
 import { categories } from '../navbar/Categories';
 import CountrySelect from '../inputs/CountrySelect';
 import Counter from '../inputs/Counter';
+import ImageUpload from '../inputs/ImageUpload';
 
 
 enum STEPS {
@@ -44,12 +45,13 @@ const RentModal = () => {
     }
   });
 
-  //destructed from useForm
+  //destructed from useForm hook
   const category = watch('category');
   const location = watch('location');
   const guestCount = watch('guestCount');
   const roomCount = watch('roomCount');
   const bathroomCount = watch('bathroomCount');
+  const imageSrc = watch('imageSrc');
 
   //import in that way due to leaflet not supporting by react
   const Map = useMemo(() => dynamic(() => import('../Map'), {
@@ -112,7 +114,7 @@ const RentModal = () => {
       </div>
     </div>
   );
-
+  //location section
   if (step === STEPS.LOCATION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
@@ -131,7 +133,7 @@ const RentModal = () => {
       </div>
     );
   };
-
+  //info section
   if (step === STEPS.INFO) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
@@ -145,24 +147,40 @@ const RentModal = () => {
           value={guestCount}
           onChange={(value) => setCustomValue('guestCount', value)}
         />
-        <hr/>
+        <hr />
         <Counter
           title='Rooms'
           subtitle='How many rooms do you have?'
           value={roomCount}
-          onChange={(value) => setCustomValue('guestCount', value)}
+          onChange={(value) => setCustomValue('roomCount', value)}
         />
-        <hr/>
+        <hr />
         <Counter
           title='Bathrooms'
           subtitle='How many Bathrooms do you have?'
           value={bathroomCount}
-          onChange={(value) => setCustomValue('guestCount', value)}
+          onChange={(value) => setCustomValue('bathroomCount', value)}
         />
-      
       </div>
     );
   };
+
+  //image section 
+
+  if (step === STEPS.IMAGES) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Add a picture of your place'
+          subtitle='Show everybody what your place looks like'
+        />
+        <ImageUpload
+          value={imageSrc}
+          onChange={(value) => setCustomValue('imageSrc', value)}
+        />
+      </div>
+    )
+  }
 
   return (
     <div>
