@@ -5,6 +5,7 @@ import { useMemo, useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { categories } from "@/app/components/navbar/Categories";
 import { eachDayOfInterval, differenceInDays } from "date-fns";
+import { Range } from 'react-date-range';
 import { toast } from "react-hot-toast";
 import axios from 'axios';
 import Container from "@/app/components/Container";
@@ -30,7 +31,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
-  const [dateRange, setDateRange] = useState(initialDateRange);
+  const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
   const loginModal = useLoginModal();
   const router = useRouter();
@@ -77,7 +78,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
-
+      //count total price
       (dayCount && listing.price)
         ? setTotalPrice(dayCount * listing.price)
         : setTotalPrice(listing.price);

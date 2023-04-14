@@ -12,7 +12,7 @@ interface DatePickerProps {
 const Calendar: React.FC<DatePickerProps> = ({ value, onChange, disabledDates }) => {
   return (
     <DateRange
-      rangeColors={['#262626']}
+      rangeColors={['#026ABC']}
       ranges={[value]}
       date={new Date()}
       onChange={onChange}
