@@ -6,9 +6,8 @@ import { SafeUser } from "@/app/types";
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
 
-const Map = dynamic(() => import('../Map'), {
-  ssr: false
-});
+//due to react not support map library
+const Map = dynamic(() => import('../Map'), { ssr: false });
 
 interface ListingInfoProps {
   user: SafeUser,
@@ -58,6 +57,5 @@ const ListingInfo: React.FC<ListingInfoProps> = ({ user, description,
     </div>
   );
 };
-
 
 export default ListingInfo;
