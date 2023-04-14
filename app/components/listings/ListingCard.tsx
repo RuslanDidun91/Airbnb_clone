@@ -9,8 +9,6 @@ import Image from 'next/image';
 import Button from '../Button';
 import HeartButton from "../HeartButton";
 
-
-
 interface ListingCardProps {
   data: SafeListing;
   reservation?: SafeReservation;
@@ -62,6 +60,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ data, reservation, onAction,
 
   return (
     <div
+      //redirect to listings/pageId
       onClick={() => router.push(`/listings/${data.id}`)}
       className="col-span-1 cursor-pointer group">
       <div className="flex flex-col gap-2 w-full">

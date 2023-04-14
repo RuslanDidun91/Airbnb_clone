@@ -3,7 +3,7 @@ import ClientOnly from "./components/ClientOnly";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import EmptyState from "./components/EmptyState";
 import getListings from './actions/getListings';
-import ListingCard from "./components/listing/ListingCard";
+import ListingCard from "./components/listings/ListingCard";
 
 
 const Home = async ({ }) => {
