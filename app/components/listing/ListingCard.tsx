@@ -72,7 +72,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ data, reservation, onAction,
             src={data.imageSrc}
             alt="Listing"
           />
-          <div className="absolute top-3right-3">
+          <div className="absolute top-3 right-3">
             <HeartButton
               listingId={data.id}
               currentUser={currentUser}
