@@ -1,13 +1,14 @@
 'use client'
 import { useState, useCallback } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { SafeUser } from '@/app/types';
+import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import Avatar from '../Avatar';
 import MenuItem from './MenuItem';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRentModal from '@/app/hooks/useRentModal';
-import { SafeUser } from '@/app/types';
-import { signOut } from 'next-auth/react';
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -15,6 +16,7 @@ interface UserMenuProps {
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 
+  const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
@@ -57,7 +59,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
               <>
                 <MenuItem
                   label="My trips"
-                  onClick={() => { }}
+                  onClick={() => router.push('/trips')}
                 />
                 <MenuItem
                   label="My favorites"
@@ -65,7 +67,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 />
                 <MenuItem
                   label="My reservations"
-                  onClick={() => { }}
+                  onClick={() => router.push('/reservations')}
                 />
                 <MenuItem
                   label="My properties"
