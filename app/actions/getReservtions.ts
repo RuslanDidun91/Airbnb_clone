@@ -22,7 +22,7 @@ export default async function getReservations(params: Iparams) {
       include: { listing: true },
       orderBy: { createdAt: 'desc' }
     });
-
+    //avoid next warning
     const safeReservations = reservations.map(
       (reservation) => ({
         ...reservation,
