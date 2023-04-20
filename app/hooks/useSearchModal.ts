@@ -12,5 +12,4 @@ const useSearchModal = create<SearchModalStore>((set) => ({
   onClose: () => set({ isOpen: false })
 }));
 
-
 export default useSearchModal;

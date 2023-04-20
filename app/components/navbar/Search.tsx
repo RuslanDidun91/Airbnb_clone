@@ -1,9 +1,10 @@
 //definedd as a client component
 'use client';
-import { useMemo } from 'react'
-import { BiSearch } from 'react-icons/bi';
-import { differenceInDays } from 'date-fns';
 import { useSearchParams } from 'next/navigation';
+import { differenceInDays } from 'date-fns';
+import { BiSearch } from 'react-icons/bi';
+import { useMemo } from 'react'
+
 import useSearchModal from '@/app/hooks/useSearchModal';
 import useCountries from '@/app/hooks/useCountries';
 
@@ -19,6 +20,7 @@ const Search = () => {
   const endDate = params?.get('endDate');
   const guestCount = params?.get('guestCount');
 
+  //displaying value in searching bar
   const locationLabel = useMemo(() => {
     if (locationValue) {
       return getByValue(locationValue as string)?.label;
@@ -26,6 +28,7 @@ const Search = () => {
     return 'Anywhere';
   }, [locationValue, getByValue]);
 
+  //duration value in searchbar
   const durationLabel = useMemo(() => {
     if (startDate && endDate) {
       const start = new Date(startDate as string);
@@ -40,6 +43,7 @@ const Search = () => {
     return 'Any Week'
   }, [startDate, endDate]);
 
+  //number of guests
   const guestLabel = useMemo(() => {
     if (guestCount) {
       return `${guestCount} Guests`;

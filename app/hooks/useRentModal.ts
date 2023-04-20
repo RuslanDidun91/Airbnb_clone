@@ -12,5 +12,4 @@ const useRentModal = create<RentModalStore>((set) => ({
   onClose: () => set({ isOpen: false })
 }));
 
-
 export default useRentModal;

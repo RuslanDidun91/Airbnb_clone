@@ -23,5 +23,4 @@ const CategoryInput: React.FC<CategoryInputProps> = ({
   );
 };
 
-
 export default CategoryInput;

@@ -4,10 +4,11 @@ import { Range } from 'react-date-range';
 import { formatISO } from 'date-fns';
 import { useRouter, useSearchParams } from "next/navigation";
 import { CountrySelectValue } from "../inputs/CountrySelect";
+
 import qs from 'query-string';
 import Modal from "./Modal";
 import Heading from '../Heading';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import Counter from "../inputs/Counter";
 import Calendar from '../inputs/Calendar';
 import CountrySelect from '../inputs/CountrySelect';

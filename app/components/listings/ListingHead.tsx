@@ -1,10 +1,10 @@
 'use client'
-import Image from "next/image";
 import { SafeUser } from "@/app/types";
-import useCountries from "@/app/hooks/useCountries";
-import Heading from "../Heading";
-import HeartButton from "../HeartButton";
 
+import useCountries from "@/app/hooks/useCountries";
+import HeartButton from "../HeartButton";
+import Heading from "../Heading";
+import Image from "next/image";
 
 interface ListingHeadProps {
   title: string;
@@ -44,6 +44,5 @@ const ListingHead: React.FC<ListingHeadProps> = ({
     </>
   );
 };
-
 
 export default ListingHead;

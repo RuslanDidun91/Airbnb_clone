@@ -1,6 +1,5 @@
 import prisma from "@/app/libs/prismadb";
 
-
 interface Iparams {
   listingId?: string;
   userId?: string;
@@ -37,5 +36,5 @@ export default async function getReservations(params: Iparams) {
     return safeReservations;
   } catch (error: any) {
     throw new Error(error);
-  }
-}
+  };
+};

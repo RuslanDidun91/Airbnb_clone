@@ -1,7 +1,5 @@
 'use client'
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-
-
 import { useCallback } from "react";
 
 interface CounterProps {
@@ -50,6 +48,5 @@ const Counter: React.FC<CounterProps> = ({ subtitle, value, onChange, title }) =
     </div>
   );
 };
-
 
 export default Counter;

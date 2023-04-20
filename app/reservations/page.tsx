@@ -1,7 +1,7 @@
-import EmptyState from "@/app/components/EmptyState";
-import ClientOnly from "@/app/components/ClientOnly";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getReservations from "../actions/getReservtions";
+import EmptyState from "@/app/components/EmptyState";
+import ClientOnly from "@/app/components/ClientOnly";
 import ReservationsClient from "./ReservationClient";
 
 const ReservationsPage = async () => {
@@ -16,7 +16,7 @@ const ReservationsPage = async () => {
           subtitle="Please login"
         />
       </ClientOnly>
-    )
+    );
   }
 
   const reservations = await getReservations({ authorId: currentUser.id });

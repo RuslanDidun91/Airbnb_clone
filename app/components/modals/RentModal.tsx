@@ -1,20 +1,20 @@
 'use client'
-import { useState, useMemo } from 'react';
-import { useRouter } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import Modal from "./Modal";
-import Heading from '../Heading';
-import dynamic from 'next/dynamic'
-import CategoryInput from '../inputs/CategoryInput';
-import useRentModal from "@/app/hooks/useRentModal";
 import { categories } from '../navbar/Categories';
-import CountrySelect from '../inputs/CountrySelect';
-import Counter from '../inputs/Counter';
-import ImageUpload from '../inputs/ImageUpload';
-import Input from '../inputs/Input';
-import axios from 'axios';
+import { useRouter } from "next/navigation";
+import { useState, useMemo } from 'react';
 import { toast } from 'react-hot-toast';
 
+import CategoryInput from '../inputs/CategoryInput';
+import useRentModal from "@/app/hooks/useRentModal";
+import CountrySelect from '../inputs/CountrySelect';
+import ImageUpload from '../inputs/ImageUpload';
+import Counter from '../inputs/Counter';
+import Input from '../inputs/Input';
+import dynamic from 'next/dynamic';
+import Heading from '../Heading';
+import Modal from "./Modal";
+import axios from 'axios';
 
 enum STEPS {
   CATEGORY = 0,
@@ -45,7 +45,7 @@ const RentModal = () => {
       imageSrc: '',
       price: 1,
       title: '',
-      description: '',
+      description: ''
     }
   });
 
@@ -70,7 +70,6 @@ const RentModal = () => {
       shouldValidate: true
     });
   }
-
 
   const onBack = () => {
     setStep((value) => value - 1);
@@ -117,7 +116,6 @@ const RentModal = () => {
   }, [step]);
 
   //will be changeble variable
-
   let bodyContent = (
     <div>
       <Heading
@@ -138,6 +136,7 @@ const RentModal = () => {
       </div>
     </div>
   );
+
   //location section
   if (step === STEPS.LOCATION) {
     bodyContent = (
@@ -157,6 +156,7 @@ const RentModal = () => {
       </div>
     );
   };
+
   //info section
   if (step === STEPS.INFO) {
     bodyContent = (

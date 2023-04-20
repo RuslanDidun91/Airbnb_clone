@@ -1,13 +1,13 @@
 'use client'
 import { SafeReservation, SafeUser } from "../types";
-import { toast } from "react-hot-toast";
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import { toast } from "react-hot-toast";
+
+import ListingCard from "../components/listings/ListingCard";
 import Container from "../components/Container";
 import Heading from "../components/Heading";
-import ListingCard from "../components/listings/ListingCard";
-
+import axios from "axios";
 
 interface TripsClientProps {
   reservations?: SafeReservation[];
@@ -27,9 +27,10 @@ const TripsClient: React.FC<TripsClientProps> = ({ reservations, currentUser }) 
       router.refresh();
     }).catch((error) => {
       toast.error(error?.response?.data?.error)
-    }).finally(() => { 
-      setDeletingId('') }
-      );
+    }).finally(() => {
+      setDeletingId('')
+    }
+    );
   }, [router]);
 
   return (
@@ -57,6 +58,5 @@ const TripsClient: React.FC<TripsClientProps> = ({ reservations, currentUser }) 
     </Container>
   );
 };
-
 
 export default TripsClient;

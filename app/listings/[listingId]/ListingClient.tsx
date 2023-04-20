@@ -1,17 +1,18 @@
 'use client'
 import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { useMemo, useState, useCallback, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { categories } from "@/app/components/navbar/Categories";
 import { eachDayOfInterval, differenceInDays } from "date-fns";
+import { categories } from "@/app/components/navbar/Categories";
+import { useRouter } from "next/navigation";
 import { Range } from 'react-date-range';
 import { toast } from "react-hot-toast";
-import axios from 'axios';
-import Container from "@/app/components/Container";
+
+import ListingReservation from "@/app/components/listings/ListingReservation";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import ListingReservation from "@/app/components/listings/ListingReservation";
+import Container from "@/app/components/Container";
+import axios from 'axios';
 
 const initialDateRange = {
   startDate: new Date(),
@@ -126,6 +127,5 @@ const ListingClient: React.FC<ListingClientProps> = ({
     </Container>
   );
 };
-
 
 export default ListingClient;

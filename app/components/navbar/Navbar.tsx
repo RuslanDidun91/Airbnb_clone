@@ -1,10 +1,11 @@
 'use client'
-import Container from "../Container";
-import Logo from "./Logo";
-import Search from "./Search";
-import UserMenu from "./UserMenu";
 import { SafeUser } from "@/app/types";
+
 import Categories from "./Categories";
+import Container from "../Container";
+import UserMenu from "./UserMenu";
+import Search from "./Search";
+import Logo from "./Logo";
 
 interface NavbarProps {
   //type of user was generated during we run npx prisma push

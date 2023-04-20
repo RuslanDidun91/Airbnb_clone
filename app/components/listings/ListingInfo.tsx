@@ -1,10 +1,11 @@
 'use client'
-import dynamic from "next/dynamic";
-import { IconType } from "react-icons";
-import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
-import Avatar from "../Avatar";
+import { IconType } from "react-icons";
+
+import useCountries from "@/app/hooks/useCountries";
 import ListingCategory from "./ListingCategory";
+import dynamic from "next/dynamic";
+import Avatar from "../Avatar";
 
 //due to react not support map library
 const Map = dynamic(() => import('../Map'), { ssr: false });

@@ -1,11 +1,10 @@
 'use client'
-import Container from "../Container";
 import { usePathname, useSearchParams } from 'next/navigation';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import { MdOutlineVilla } from 'react-icons/md';
+import { IoDiamond } from 'react-icons/io5';
 import { FaSkiing } from 'react-icons/fa';
 import { BsSnow } from 'react-icons/bs';
-import { IoDiamond } from 'react-icons/io5';
-import { MdOutlineVilla } from 'react-icons/md';
 import {
   GiBarn,
   GiBoatFishing,
@@ -16,7 +15,9 @@ import {
   GiIsland,
   GiWindmill
 } from 'react-icons/gi';
+
 import CategoryBox from "../CategoryBox";
+import Container from "../Container";
 
 
 export const categories = [
@@ -109,7 +110,6 @@ const Categories = () => {
   if (!isMainPage) {
     return null;
   }
-
 
   return (
     <Container>

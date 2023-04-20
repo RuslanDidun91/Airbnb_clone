@@ -50,6 +50,5 @@ export async function DELETE(request: Request, { params }: { params: IParams }) 
     where: { id: currentUser.id },
     data: { favoriteIds }
   });
-
   return NextResponse.json(user);
 }

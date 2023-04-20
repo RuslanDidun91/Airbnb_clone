@@ -1,9 +1,8 @@
 'use client'
-import { IconType } from "react-icons";
 import { useRouter, useSearchParams } from "next/navigation";
+import { IconType } from "react-icons";
 import { useCallback } from "react";
 import qs from 'query-string';
-
 
 interface CategoryProps {
   icon: IconType;
@@ -15,7 +14,6 @@ const CategoryBox: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) =
 
   const router = useRouter();
   const params = useSearchParams();
-
 
   const handleClick = useCallback(() => {
     //define an empty query
@@ -53,6 +51,5 @@ const CategoryBox: React.FC<CategoryProps> = ({ label, icon: Icon, selected }) =
     </div>
   );
 };
-
 
 export default CategoryBox;

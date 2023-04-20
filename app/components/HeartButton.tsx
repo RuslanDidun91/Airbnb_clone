@@ -1,8 +1,7 @@
 'use client';
-
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { SafeUser } from "@/app/types";
-import ClientOnly from "./ClientOnly";
+
 import useFavorite from "../hooks/useFavorite";
 
 interface HeartButtonProps {
@@ -25,6 +24,6 @@ const HeartButton: React.FC<HeartButtonProps> = ({ listingId, currentUser }) => 
         className={hasFavorited ? 'fill-rose-500' : 'fill-neutral-500/70'} />
     </div>
   );
-}
+};
 
 export default HeartButton;

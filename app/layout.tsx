@@ -1,12 +1,13 @@
 import { Nunito } from 'next/font/google';
-import Navbar from './components/navbar/Navbar';
-import ClientOnly from './components/ClientOnly';
+
 import RegisterModal from './components/modals/RegisterModal';
 import ToasterProvider from './providers/ToasterProvider';
+import SearchModal from './components/modals/SearchModal';
 import LoginModal from './components/modals/LoginModal';
 import RentModal from './components/modals/RentModal';
 import getCurrentUser from './actions/getCurrentUser';
-import SearchModal from './components/modals/SearchModal';
+import ClientOnly from './components/ClientOnly';
+import Navbar from './components/navbar/Navbar';
 
 import './globals.css';
 
@@ -44,5 +45,5 @@ export default async function RootLayout({
         </div>
       </body>
     </html>
-  )
+  );
 }
