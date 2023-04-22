@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align = "center">
+  
+   <a>[<img src="https://i.imgur.com/RD2SvSZ.png" alt="Logo" width="320" height="100">](https://rent-home-two.vercel.app/)</a>
+  
+### Air bee&bee
+</br>
+
+<div id="description" align="center">
+ Created and designed by Ruslan Didun
+
+[![LinkedIn Badge](https://img.shields.io/badge/-RuslanDidun-blue?style=flat&logo=Linkedin&logoColor=black)](https://www.linkedin.com/in/ruslan-didun/)
+[![Instagram Badge](https://img.shields.io/badge/-wanderlust_unlimited-skyblue?style=flat&logo=Instagram&logoColor=black)](https://www.instagram.com/wanderlust_unlimited_/)
+[![GitHub Badge](https://img.shields.io/badge/-RuslanDidun-junglegreen?style=flat&logo=GitHub&logoColor=black)](https://github.com/RuslanDidun)
+
+<p align="center">
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#instructions">Instructions</a> •
+  <a href="#upcoming-features">Upcoming Features</a> •
+  <a href="#technologies">Technologies</a> 
+</p>
+
+
+## About
+
+My first React Native app, JobSearcher, is a mobile job search platform that leverages the JSearch API to provide users with dynamically rendered job listings based on their search criteria. JobSearcher features a user-friendly interface that allows job seekers to quickly browse through job postings and save interesting opportunities for later review. During development, I faced some challenges with API integration and data rendering, but I was able to overcome them by leveraging the extensive React Native documentation and online developer communities. Overall, JobSearcher was a great learning experience that allowed me to deepen my knowledge of mobile development and build a useful product that could help job seekers find their dream jobs.
 
 ## Getting Started
+### Check this cool app out via [link 👈](https://rent-home-two.vercel.app/)
+</br>
+<img src="https://i.imgur.com/HJjDTU8.png" alt="Image" width="550" height="550">
+</br>
 
-First, run the development server:
+## Instructions
+<details open>
+  <summary>How to join Air bee&bee</summary>
+    <div>* Create a new user using Sign up/login form</div>
+    <div>* You can use Google or Github oAuth as well</div>
+    <div>* Browse all listings, create your own listing</div>
+    <div>* Check out properties, book your trip or cencel anytime</div>
+</details>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<img src="https://i.imgur.com/fy2L18J.png" alt="Logo" width="800" height="600">
+</br>
+</br>
+<img src="https://i.imgur.com/QNILxbw.png" alt="Logo" width="800" height="600">
+</br>
+</br>
+<img src="https://i.imgur.com/sCMCPj9.png" alt="Logo" width="800" height="600">
+</br>
+</br>
+<img src="https://i.imgur.com/SLGNkhe.png" alt="Logo" width="800" height="600">
+</br>
+</br>
+<img src="https://i.imgur.com/ougfKKk.png" alt="Logo" width="800" height="600">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Upcoming Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [x] Created and set up project, installed all packages and libraries.
+- [x] Implemented custom hooks for fetching data, pagination, styles.
+- [x] Added search bar, dynamic stylesheet, custom screen headers. 
+- [x] Responsive dessign accross all devices, search functionality.
+- [ ] Create login form, connect database, make add to favourite.
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+## Technologies  
+![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=React)
+![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
+![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
+![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
+![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
+![MUI](https://img.shields.io/badge/-MUI-05122A?style=flat&logo=MUI)
+![Google](https://img.shields.io/badge/-Google-05122A?style=flat&logo=Google)
+![CrossedFingers](https://img.shields.io/badge/-CrossedFingers-05122A?style=flat&logo=CrossedFingers)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div align=left>
