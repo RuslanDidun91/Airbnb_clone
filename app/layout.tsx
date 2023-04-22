@@ -13,7 +13,7 @@ import './globals.css';
 
 
 export const metadata = {
-  title: 'Airbnb',
+  title: 'Air bee&bee',
   description: 'AirBnb clone',
 }
 
