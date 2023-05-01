@@ -51,7 +51,7 @@ book future trip, add property to your favourites and browse through available l
 <img src="https://i.imgur.com/SLGNkhe.png" alt="Logo" width="800" height="600">
 </br>
 </br>
-<img src="https://i.imgur.com/ougfKKk.png" alt="Logo" width="800" height="600">
+<img src="https://i.imgur.com/ougfKKk.png" alt="Logo" width="800" height="500">
 
 ## Upcoming Features
 
